@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Dianita ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff6b9d,#ff9eb5);
+    overflow:hidden;
+}
+
+.container{
+    text-align:center;
+    padding:20px;
+    z-index:2;
+}
+
+.surat{
+    font-size:100px;
+    cursor:pointer;
+    animation:naikTurun 2s infinite;
+}
+
+@keyframes naikTurun{
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+.kartu{
+    display:none;
+    max-width:420px;
+    background:white;
+    padding:25px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    animation:muncul 1s ease;
+}
+
+@keyframes muncul{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.foto{
+    width:220px;
+    border-radius:20px;
+    margin-bottom:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+h1{
+    color:#ff4d88;
+    margin-bottom:15px;
+}
+
+p{
+    line-height:1.8;
+    color:#444;
+}
+
+.nama{
+    color:#ff4d88;
+    font-weight:bold;
+    margin-top:20px;
+}
+
+.heart{
+    position:absolute;
+    color:white;
+    animation:jatuh linear forwards;
+}
+
+@keyframes jatuh{
+    from{
+        transform:translateY(-100px);
+        opacity:1;
+    }
+    to{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="surat" onclick="bukaSurat()">
+💌
+<p style="font-size:18px;color:white;">
+Klik surat ini sayang ❤️
+</p>
+</div>
+
+<div class="kartu" id="kartu">
+
+<img src="foto-kita.jpg" class="foto">
+
+<h1>Untuk Dianita ❤️</h1>
+
+<p>
+Hai Sayangku...<br><br>
+
+Walaupun saat ini kita dipisahkan oleh jarak,
+aku ingin kamu tahu bahwa tidak ada satu hari pun
+aku melewati hariku tanpa memikirkanmu.<br><br>
+
+Terima kasih karena selalu ada untukku,
+selalu mendukungku, dan selalu membuatku merasa
+bahwa aku tidak pernah sendirian.<br><br>
+
+Jarak hanya memisahkan raga kita,
+tetapi tidak akan pernah memisahkan hati kita. ❤️<br><br>
+
+Aku rindu senyummu,
+aku rindu suaramu,
+dan aku rindu semua tentang dirimu.<br><br>
+
+Aku sayang kamu hari ini,
+besok,
+dan seterusnya. ❤️🌹
+</p>
+
+<div class="nama">
+Dari seseorang yang selalu mencintaimu ❤️
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function bukaSurat(){
+    document.querySelector(".surat").style.display="none";
+    document.getElementById("kartu").style.display="block";
+}
+
+function buatHati(){
+    const hati=document.createElement("div");
+
+    hati.classList.add("heart");
+    hati.innerHTML="❤️";
+
+    hati.style.left=Math.random()*100+"vw";
+    hati.style.fontSize=(15+Math.random()*25)+"px";
+    hati.style.animationDuration=(3+Math.random()*4)+"s";
+
+    document.body.appendChild(hati);
+
+    setTimeout(()=>{
+        hati.remove();
+    },7000);
+}
+
+setInterval(buatHati,300);
+
+</script>
+
+</body>
+</html>
